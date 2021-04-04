@@ -25,10 +25,12 @@ buildah run $container -- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup
 buildah run $container -- sh /tmp/rust-init.sh -y
 # set nightly rust
 buildah run $container -- rustup default nightly
+# download rust src
+buildah run $container -- rustup component add rust-src
 
 buildah config --created-by "dmike16"  $container
 buildah config --author "dmike16 at dual-lab.yandex.com" $container
-buildah config --label name="dlabc/jarvis-build-env:0.0.1" $container
+buildah config --label name="dlabc/jarvis-build-env:0.0.2" $container
 
 # Commit the image and remove the container
-buildah commit --rm $container dlabc/jarvis-build-env:0.0.1
+buildah commit --rm $container dlabc/jarvis-build-env:0.0.2
