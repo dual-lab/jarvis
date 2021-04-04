@@ -1,5 +1,12 @@
+#![feature(global_asm)]
+#![feature(lang_items)]
 #![no_std] // don't link the Rust standard library
 #![no_main] // disable all Rust-level entry points
+
+#[cfg(not(target_os = "none"))]
+compile_error!("The boot binary must be compiled for the `x86_64-jarvis.json` target");
+
+mod multiboot_header;
 
 use core::panic::PanicInfo;
 use kernel;
@@ -8,6 +15,8 @@ use kernel;
 fn panic(_info: &PanicInfo) -> ! {
     loop {}
 }
+
+#[lang = "eh_personality"] extern fn eh_personality() {}
 
 #[no_mangle] // don't mangle the name of this function
 pub extern "C" fn _start() -> ! {
