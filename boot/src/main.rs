@@ -4,7 +4,7 @@
 #![no_main] // disable all Rust-level entry points
 
 #[cfg(not(target_os = "none"))]
-compile_error!("The boot binary must be compiled for the `x86_64-jarvis.json` target");
+compile_error!("The boot binary must be compiled for the custom jaris target");
 
 mod multiboot_header;
 
