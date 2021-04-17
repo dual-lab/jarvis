@@ -2,16 +2,17 @@
 .intel_syntax noprefix
 .code32
 
+.align 8                            # multiboot header aling
 header_start:
     .long 0xe85250d6                # magic number (multiboot 2)
     .long 0                         # architecture 0 (protected mode i386)
     .long header_end - header_start # header length
-    .long 0x100000000 - (0xe85250d6 + 0 + (header_end - header_start)) # checksum
+    .long -(0xe85250d6 + 0 + (header_end - header_start)) # checksum
 
     # insert optional multiboot tags here
 
     # required end tag
-    .word 0    # type
-    .word 0    # flags
-    .word 8    # size
+    .short 0    # type
+    .short 0    # flags
+    .long  8    # size
 header_end:

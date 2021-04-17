@@ -19,7 +19,7 @@ buildah run $container -- rm -rf /var/cache/apt/*
 # install rust nightly
 buildah config --env RUSTUP_HOME=/usr/local/rustup $container
 buildah config --env CARGO_HOME=/usr/local/cargo $container 
-buildah config --env PATH=/usr/local/cargo/bin:$PATH $container
+buildah config --env 'PATH=/usr/local/cargo/bin:$PATH' $container
 buildah config --env RUST_VERSION=1.51.0 $container
 buildah run $container -- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/rust-init.sh
 buildah run $container -- sh /tmp/rust-init.sh -y

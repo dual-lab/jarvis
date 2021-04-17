@@ -8,5 +8,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "bootloader"
+version = "0.1.0"
+dependencies = [
+ "kernel",
+]
+
+[[package]]
 name = "kernel"
 version = "0.1.0"
