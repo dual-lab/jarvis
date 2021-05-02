@@ -33,7 +33,6 @@ fn main() {
         Path::new(&directory_structure).join("grub.cfg"),
     )
     .unwrap();
-    // TODO: create make iso file script
     let script_path = Path::new(&output_dir).join("makeiso.sh");
     let mut script_file = File::create(script_path).unwrap();
 
