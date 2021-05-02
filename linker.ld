@@ -13,4 +13,9 @@ SECTIONS {
     {
         *(.text .text.*)
     }
+
+    .bss :
+    {
+      *(.bss)
+    }
 }
