@@ -16,6 +16,6 @@ SECTIONS {
 
     .bss :
     {
-      *(.bss)
+      *(.bss .bss.*)
     }
 }
