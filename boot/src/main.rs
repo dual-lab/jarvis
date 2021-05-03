@@ -7,10 +7,11 @@
 #[cfg(not(target_os = "none"))]
 compile_error!("The boot binary must be compiled for the custom jaris target");
 
+
+mod multiboot_header;
+mod stage;
 #[cfg(target_arch = "x86_64")]
 mod long_mode;
-mod multiboot_header;
-mod stack;
 
 use core::panic::PanicInfo;
 use kernel;
@@ -24,9 +25,7 @@ fn panic(_info: &PanicInfo) -> ! {
 extern "C" fn eh_personality() {}
 
 #[no_mangle] // don't mangle the name of this function
-pub extern "C" fn _start() -> ! {
-    // initialize the stack
-    stack::initialize();
+pub extern "C" fn _boot() -> ! {
     kernel::it_works();
     loop {}
 }
