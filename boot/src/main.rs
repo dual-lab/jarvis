@@ -10,8 +10,6 @@ compile_error!("The boot binary must be compiled for the custom jaris target");
 
 mod multiboot_header;
 mod stage;
-#[cfg(target_arch = "x86_64")]
-mod long_mode;
 
 use core::panic::PanicInfo;
 use kernel;
