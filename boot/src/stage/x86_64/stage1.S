@@ -2,7 +2,7 @@
 .code32
 
 .section .text
-.extern _boot, _check_system
+.extern _check_system, _stage2
 .global _start
 
 .set VGA_BUFFER_ADDRESS, 0xb8000
@@ -11,11 +11,11 @@
 # desc : Main entry point.
 #        Performe some initial setup and check actions
 _start:
-  mov stack_top, esp # setup stack pointer
-  mov edi, ebx       # move multiboot structure pointer to edi 
+  mov esp, offset stack_top     # setup stack pointer
+  mov edi, ebx                  # move multiboot structure pointer to edi 
   
-  call _check_system # perform system check arch dependent
-  call _boot         # boot into the kernel
+  call _check_system            # perform system check arch dependent
+  jmp _stage2                   # jmp to stage2 initialization
 
   hlt
 
@@ -38,9 +38,20 @@ _error:
   hlt
 
 .section .bss 
-.set STACK_SIZE, 0x4000
+# reserve space for page mepping table
+# aligned to 4096B
+.set PAGE_TABLE_SIZE, 0x1000
+.balign PAGE_TABLE_SIZE
+_pml4:
+  .lcomm p4, PAGE_TABLE_SIZE
+_pdp:
+  .lcomm p3, PAGE_TABLE_SIZE
+_pd:
+  .lcomm p2, PAGE_TABLE_SIZE
 #Stack size of 16KB  align to 16
+.equiv STACK_SIZE, 0x4000
+.balign 16
 stack_botton:
-  .comm stack, STACK_SIZE, 16
+  .lcomm stack, STACK_SIZE
 stack_top:
 

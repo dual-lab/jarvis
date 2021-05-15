@@ -16,6 +16,16 @@ SECTIONS {
 
     .bss :
     {
-      *(.bss .bss.*)
+         *(.bss .bss.*)
+    }
+
+    .data :
+    {
+          *(.data .data.*)
+    }
+
+    .rodata :
+    {
+          *(.rodata .rodata.*)
     }
 }
