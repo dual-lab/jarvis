@@ -1,5 +1,8 @@
 // asm inline registers function
 
+//! This module containts inline assembly function
+//! to handle operation on registers
+
 /// Clean up all data segment registers
 #[inline(always)]
 pub unsafe fn cleanup_data_segment() {

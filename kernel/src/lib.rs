@@ -1,6 +1,9 @@
 #![feature(asm)]
 #![no_std] // don't link the Rust standard library
 
+//! This crate containts the main kernel 
+//! implementation
+
 use asm::registers;
 
 /// Main kernel entry point
