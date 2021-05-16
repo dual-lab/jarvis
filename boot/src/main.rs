@@ -23,7 +23,7 @@ fn panic(_info: &PanicInfo) -> ! {
 extern "C" fn eh_personality() {}
 
 #[no_mangle] // don't mangle the name of this function
-pub extern "C" fn _boot() -> ! {
-    kernel::it_works();
+pub unsafe extern "C" fn _boot() -> ! {
+    kernel::main();
     loop {}
 }

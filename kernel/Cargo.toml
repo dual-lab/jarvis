@@ -9,3 +9,4 @@ repository = "https://github.com/dual-lab/jarvis"
 
 [dependencies]
 
+asm = { path = "../asm"}
