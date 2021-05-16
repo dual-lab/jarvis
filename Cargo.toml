@@ -3,6 +3,7 @@ members = [
     "kernel",
     "boot",
     "bootloader",
+    "asm",
 ]
 
 [profile.dev]

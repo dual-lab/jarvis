@@ -1,5 +1,5 @@
 [package]
-name = "kernel"
+name = "asm"
 version = "0.1.0"
 authors = ["dual-lab@yandex.com"]
 edition = "2018"
@@ -8,5 +8,3 @@ repository = "https://github.com/dual-lab/jarvis"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
-asm = { path = "../asm"}

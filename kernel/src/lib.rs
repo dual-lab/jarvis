@@ -1,6 +1,13 @@
 #![feature(asm)]
 #![no_std] // don't link the Rust standard library
 
-pub fn it_works() {
-    unsafe { asm!("mov dword ptr [0xb8000], 0x2f4b2f4f"); }
+//! This crate containts the main kernel 
+//! implementation
+
+use asm::registers;
+
+/// Main kernel entry point
+pub unsafe fn main() {
+    registers::cleanup_data_segment();
+    asm!("mov dword ptr [0xb8000], 0x2f4b2f4f");
 }
