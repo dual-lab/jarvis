@@ -2,8 +2,11 @@
 members = [
     "kernel",
     "boot",
-    "bootloader",
-    "asm",
+    "asm"
+]
+
+exclude = [
+  "kbuild"
 ]
 
 [profile.dev]
