@@ -5,10 +5,6 @@ members = [
     "asm"
 ]
 
-exclude = [
-  "kbuild"
-]
-
 [profile.dev]
 panic = "abort"
 

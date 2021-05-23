@@ -1,7 +1,15 @@
 # jarvis
 
-Example of building an OS with Rust + assenbly. Following the blog posts of [phill-opp](https://os.phil-opp.com/).
+Monorepo for a kernel built in rust.
 
-## Build enviroment
+## Build enviroment (kenv)
 
-See [build-enviroment](./buildenv/README.md)
+See [kenv](./kenv/README.md)
+
+## Build tool (kbuild)
+
+See [kbuild](./kbuild/README.md)
+
+## Main rust kernel
+
+See [kernel](./kbin/README.md)
