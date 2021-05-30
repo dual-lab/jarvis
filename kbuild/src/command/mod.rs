@@ -1,6 +1,7 @@
 pub mod runner;
 pub mod configure;
 pub mod build;
+pub mod error;
 
 use structopt::StructOpt;
 

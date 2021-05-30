@@ -1,7 +1,6 @@
-use anyhow::Result;
-use exitcode;
+use crate::{Command, KConfig};
+use anyhow::{bail, Result};
 use structopt::StructOpt;
-use crate::Command;
 
 #[derive(Debug, StructOpt)]
 #[structopt(name = "kbuild")]
@@ -19,7 +18,11 @@ pub struct Cli {
 }
 
 impl Cli {
-    pub fn run(&self) -> Result<exitcode::ExitCode> {
-        Ok(exitcode::OK)
+    pub fn run(self, config: KConfig) -> Result<()> {
+        match self.cmd {
+            Command::Runner(c) => c.exec(config),
+            Command::Configure(c) => c.run(),
+            _ => bail!("Command not supported"),
+        }
     }
 }
