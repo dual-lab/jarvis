@@ -14,6 +14,7 @@ rust_library(
           crate("confy"),
           crate("serde"),
         ],
+    rustc_env_files = ["//:generate_rust_env_file"],
     )
 
 rust_binary(
@@ -27,5 +28,6 @@ rust_binary(
           crate("exitcode"),
           crate("confy"),
           ":kbuild_lib"
-        ]
+        ],
+    rustc_env_files = ["//:generate_rust_env_file"],
     )
