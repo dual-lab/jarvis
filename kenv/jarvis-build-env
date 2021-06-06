@@ -14,23 +14,29 @@ trap "buildah rm $container" ERR
 
 buildah run $container -- apt update
 buildah run $container -- apt full-upgrade -y
-buildah run $container -- apt install -y grub-pc-bin xorriso grub-common yasm curl
+buildah run $container -- apt install -y grub-pc-bin xorriso grub-common yasm curl git unzip
 buildah run $container -- rm -rf /var/cache/apt/*
 # install rust nightly
-buildah config --env RUSTUP_HOME=/usr/local/rustup $container
-buildah config --env CARGO_HOME=/usr/local/cargo $container 
-buildah config --env 'PATH=/usr/local/cargo/bin:$PATH' $container
-buildah config --env RUST_VERSION=1.51.0 $container
-buildah run $container -- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/rust-init.sh
-buildah run $container -- sh /tmp/rust-init.sh -y
+# buildah config --env RUSTUP_HOME=/usr/local/rustup $container
+# buildah config --env CARGO_HOME=/usr/local/cargo $container 
+# buildah config --env 'PATH=/usr/local/cargo/bin:$PATH' $container
+# buildah config --env RUST_VERSION=1.51.0 $container
+# buildah run $container -- curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs -o /tmp/rust-init.sh
+# buildah run $container -- sh /tmp/rust-init.sh -y
 # set nightly rust
-buildah run $container -- rustup default nightly
-# download rust src
-buildah run $container -- rustup component add rust-src
+# buildah run $container -- rustup default nightly
+# # download rust src
+# buildah run $container -- rustup component add rust-src
+
+# instal bazel build system
+buildah run $container -- curl --proto '=https' --tlsv1.2 -sSfL https://github.com/bazelbuild/bazel/releases/download/4.1.0/bazel-4.1.0-installer-linux-x86_64.sh -o /tmp/bazel-install.sh
+buildah run $container -- chmod +x /tmp/bazel-install.sh
+buildah run $container -- /tmp/bazel-install.sh
 
 buildah config --created-by "dmike16"  $container
 buildah config --author "dmike16 at dual-lab.yandex.com" $container
-buildah config --label name="dlabc/jarvis-build-env:0.0.2" $container
+buildah config --label name="dlabc/jarvis-build-env" $container
+buildah config --label version="0.0.3" $container
 
 # Commit the image and remove the container
-buildah commit --rm $container dlabc/jarvis-build-env:0.0.2
+buildah commit --rm $container dlabc/jarvis-build-env:0.0.3
