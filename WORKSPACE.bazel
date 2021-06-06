@@ -1,0 +1,33 @@
+workspace(name = "jarvis")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+
+http_archive(
+    name = "rules_rust",
+    sha256 = "e596e77d630b4692e67bf1dcb0008a6aa61a4c7389c74f26daad795a57777a51",
+    strip_prefix = "rules_rust-1b0672ccfca7fa3c3fb29c710cc1ebee250d5079",
+    urls = [
+        # Master branch as of 2021-04-23
+        "https://github.com/bazelbuild/rules_rust/archive/1b0672ccfca7fa3c3fb29c710cc1ebee250d5079.tar.gz",
+    ],
+)
+
+load("@rules_rust//rust:repositories.bzl", "rust_repositories")
+
+rust_repositories(version = "nightly", iso_date = "2021-06-05",  edition = "2018", include_rustc_srcs = True)
+
+# crate universe bootstrap
+load("@rules_rust//crate_universe:bootstrap.bzl", "crate_universe_bootstrap")
+
+crate_universe_bootstrap()
+
+# load kbuild crate
+load("//kbuild:workspace.bzl", kbuild_deps = "deps")
+
+kbuild_deps()
+
+load("@kbuild_deps//:defs.bzl", kbuild_deps_pinned_rust_install = "pinned_rust_install")
+
+kbuild_deps_pinned_rust_install()
+

@@ -1,0 +1,31 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_library")
+load("@kbuild_deps//:defs.bzl", "crate")
+
+rust_library(
+    name = "kbuild_lib",
+    crate_name = "kbuild",
+    srcs = glob(include = ["src/**/*.rs"], exclude = ["src/bin/*.rs"]),
+    deps = [
+          crate("structopt"),
+          crate("anyhow"),
+          crate("log"),
+          crate("env_logger"),
+          crate("exitcode"),
+          crate("confy"),
+          crate("serde"),
+        ],
+    )
+
+rust_binary(
+    name = "kbuild",
+    srcs = ["src/bin/cargo-kbuild.rs"],
+    deps = [
+          crate("structopt"),
+          crate("anyhow"),
+          crate("log"),
+          crate("env_logger"),
+          crate("exitcode"),
+          crate("confy"),
+          ":kbuild_lib"
+        ]
+    )
