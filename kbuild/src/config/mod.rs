@@ -1,10 +1,10 @@
-use std::env;
+use serde::{Deserialize, Serialize};
 use std::default::Default;
-use serde::{Serialize, Deserialize};
+use std::env;
 
 #[derive(Serialize, Deserialize)]
 pub struct KConfig {
-
+    build: BuildConfig,
 }
 
 impl KConfig {
@@ -15,7 +15,20 @@ impl KConfig {
 
 impl Default for KConfig {
     fn default() -> Self {
-        Self {}
+        Self {
+            build: BuildConfig {
+                mode: BuildMode::GRUB,
+            },
+        }
     }
 }
 
+#[derive(Serialize, Deserialize)]
+pub struct BuildConfig {
+    mode: BuildMode,
+}
+
+#[derive(Serialize, Deserialize)]
+pub enum BuildMode {
+    GRUB,
+}
