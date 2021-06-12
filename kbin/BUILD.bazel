@@ -1,0 +1,15 @@
+exports_files(
+    [
+        "linker.ld",
+    ],
+    ["//kbin:__subpackages__"],
+)
+
+package_group(
+    name = "core",
+    packages = [
+        "//kbin/asm",
+        "//kbin/boot",
+        "//kbin/kernel",
+    ],
+)

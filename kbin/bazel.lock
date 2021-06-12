@@ -1,0 +1,19 @@
+{
+  "config": {
+    "repo_rule_name": "kbin_deps",
+    "crate_registry_template": "https://crates.io/api/v1/crates/{crate}/{version}/download",
+    "rules_rust_workspace_name": "rules_rust"
+  },
+  "hash": "6b512ecd4cb4c81f6c516b463fe3ee53706761c785885bd1c9eec218ddd2bc1a",
+  "transitive_renderable_packages": [],
+  "member_packages_version_mapping": {
+    "normal": {},
+    "build": {},
+    "dev": {}
+  },
+  "label_to_crates": {
+    "//kbin/asm:Cargo.toml": [],
+    "//kbin/boot:Cargo.toml": [],
+    "//kbin/kernel:Cargo.toml": []
+  }
+}

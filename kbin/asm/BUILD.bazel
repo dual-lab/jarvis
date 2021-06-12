@@ -1,0 +1,12 @@
+load("@rules_rust//rust:rust.bzl", "rust_library")
+load(":defs.bzl", "deps")
+
+rust_library(
+    name = "asm",
+    srcs = glob(["src/**/*.rs"]),
+    rustc_env_files = ["//:generate_rust_env_file"],
+    visibility = [
+        "//kbin:core",
+    ],
+    deps = deps,
+)
