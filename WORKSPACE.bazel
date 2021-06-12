@@ -1,0 +1,120 @@
+workspace(name = "jarvis")
+
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+##
+#
+# load bazel buildifier
+#
+#
+##
+
+http_archive(
+    name = "io_bazel_rules_go",
+    sha256 = "d1ffd055969c8f8d431e2d439813e42326961d0942bdf734d2c95dc30c369566",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/rules_go/releases/download/v0.24.5/rules_go-v0.24.5.tar.gz",
+        "https://github.com/bazelbuild/rules_go/releases/download/v0.24.5/rules_go-v0.24.5.tar.gz",
+    ],
+)
+
+load("@io_bazel_rules_go//go:deps.bzl", "go_register_toolchains", "go_rules_dependencies")
+
+go_rules_dependencies()
+
+go_register_toolchains()
+
+http_archive(
+    name = "bazel_gazelle",
+    sha256 = "b85f48fa105c4403326e9525ad2b2cc437babaa6e15a3fc0b1dbab0ab064bc7c",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-gazelle/releases/download/v0.22.2/bazel-gazelle-v0.22.2.tar.gz",
+        "https://github.com/bazelbuild/bazel-gazelle/releases/download/v0.22.2/bazel-gazelle-v0.22.2.tar.gz",
+    ],
+)
+
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
+
+gazelle_dependencies(go_repository_default_config = "@//:WORKSPACE.bazel")
+
+http_archive(
+    name = "com_google_protobuf",
+    strip_prefix = "protobuf-master",
+    urls = ["https://github.com/protocolbuffers/protobuf/archive/master.zip"],
+)
+
+load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
+
+protobuf_deps()
+
+http_archive(
+    name = "com_github_bazelbuild_buildtools",
+    strip_prefix = "buildtools-master",
+    url = "https://github.com/bazelbuild/buildtools/archive/master.zip",
+)
+
+################################################################################
+################################################################################
+################################################################################
+
+##
+#
+#  Rust rules
+#
+##
+
+http_archive(
+    name = "rules_rust",
+    sha256 = "e596e77d630b4692e67bf1dcb0008a6aa61a4c7389c74f26daad795a57777a51",
+    strip_prefix = "rules_rust-1b0672ccfca7fa3c3fb29c710cc1ebee250d5079",
+    urls = [
+        # Master branch as of 2021-04-23
+        "https://github.com/bazelbuild/rules_rust/archive/1b0672ccfca7fa3c3fb29c710cc1ebee250d5079.tar.gz",
+    ],
+)
+
+load("@rules_rust//rust:repositories.bzl", "rust_repositories")
+
+rust_repositories(
+    edition = "2018",
+    include_rustc_srcs = True,
+    iso_date = "2021-06-05",
+    version = "nightly",
+)
+
+################################################################################
+################################################################################
+################################################################################
+
+##
+#
+# crate universe bootstrap
+#
+##
+
+load("@rules_rust//crate_universe:bootstrap.bzl", "crate_universe_bootstrap")
+
+crate_universe_bootstrap()
+
+# load kbuild crate
+load("//kbuild:workspace.bzl", kbuild_deps = "deps")
+
+kbuild_deps()
+
+load("@kbuild_deps//:defs.bzl", kbuild_deps_pinned_rust_install = "pinned_rust_install")
+
+kbuild_deps_pinned_rust_install()
+
+# load kbin crate
+
+load("//kbin:workspace.bzl", kbin_deps = "deps")
+
+kbin_deps()
+
+load("@kbin_deps//:defs.bzl", kbin_deps_pinned_rust_install = "pinned_rust_install")
+
+kbin_deps_pinned_rust_install()
+
+################################################################################
+################################################################################
+################################################################################

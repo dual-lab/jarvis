@@ -1,0 +1,20 @@
+load("@rules_rust//rust:defs.bzl", "rust_binary", "rust_library")
+load(":defs.bzl", "bin_deps", "lib_deps")
+
+rust_library(
+    name = "kbuild_lib",
+    srcs = glob(
+        include = ["src/**/*.rs"],
+        exclude = ["src/bin/*.rs"],
+    ),
+    crate_name = "kbuild",
+    rustc_env_files = ["//:generate_rust_env_file"],
+    deps = lib_deps(),
+)
+
+rust_binary(
+    name = "kbuild",
+    srcs = ["src/bin/cargo-kbuild.rs"],
+    rustc_env_files = ["//:generate_rust_env_file"],
+    deps = bin_deps(),
+)
