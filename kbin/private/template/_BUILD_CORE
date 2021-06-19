@@ -1,0 +1,29 @@
+load("@rules_rust//rust:rust.bzl", "rust_library")
+
+rust_library(
+    name = "core",
+    srcs = [
+        ":core_sources",
+        "@rust_linux_x86_64//lib/rustlib/src/library/stdarch/crates/core_arch:core_arch_sources",
+    ],
+    compile_data = [
+        ":docs_sources",
+        "@rust_linux_x86_64//lib/rustlib/src/library/stdarch/crates/core_arch:docs_sources",
+    ],
+    edition = "2018",
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "core_sources",
+    srcs = glob([
+        "src/**/*.rs",
+    ]),
+)
+
+filegroup(
+    name = "docs_sources",
+    srcs = glob([
+        "src/macros/*.md",
+    ]),
+)

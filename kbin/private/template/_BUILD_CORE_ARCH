@@ -1,0 +1,15 @@
+filegroup(
+    name = "core_arch_sources",
+    srcs = glob([
+        "src/**/*.rs",
+    ]),
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "docs_sources",
+    srcs = glob([
+        "src/**/*.md",
+    ]),
+    visibility = ["//visibility:public"],
+)
