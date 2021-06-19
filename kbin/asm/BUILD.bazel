@@ -4,6 +4,7 @@ load(":defs.bzl", "deps")
 rust_library(
     name = "asm",
     srcs = glob(["src/**/*.rs"]),
+    edition = "2018",
     rustc_env_files = ["//:generate_rust_env_file"],
     visibility = [
         "//kbin:core",

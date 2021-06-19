@@ -13,7 +13,7 @@ From the workapsce root run
 
 '''shell
 
-export export RULES_RUST_CRATE_UNIVERSE_BOOTSTRAP=true
+export RULES_RUST_CRATE_UNIVERSE_BOOTSTRAP=true
 
 export RULES_RUST_REPIN=true
 

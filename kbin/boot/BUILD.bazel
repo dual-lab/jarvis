@@ -6,8 +6,10 @@ rust_binary(
     srcs = glob(["src/**/*.rs"]),
     compile_data = [":asm_sources"],
     crate_root = "src/main.rs",
+    edition = "2018",
     linker_script = "//kbin:linker.ld",
     rustc_env_files = ["//:generate_rust_env_file"],
+    target_compatible_with = ["@platforms//os:none"],
     deps = deps,
 )
 
