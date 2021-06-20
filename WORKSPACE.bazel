@@ -124,10 +124,9 @@ kbin_deps_pinned_rust_install()
 
 ##
 #
-# Register jarvis toolchain
+# Register jarvis repository
 #
 ##
+load("//kbin:repository.bzl", "jarvis_repository_set")
 
-register_toolchains("//kbin:rust_jarvis")
-
-register_toolchains("//kbin:dummy_cc_none_toolchain")
+jarvis_repository_set()

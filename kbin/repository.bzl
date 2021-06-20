@@ -1,4 +1,7 @@
 load("@rules_rust//rust:toolchain.bzl", "rust_toolchain")
+load("//kbin/private:version.bzl", "DEFAULT_VERSION", "check_version_for_repo")
+
+_DEFAULT_REPO_NAME = "jarvis"
 
 def _dummy_cc_toolchain_impl(ctx):
     return [platform_common.ToolchainInfo(all_files = depset([]))]
@@ -62,3 +65,33 @@ def declare_jarvis_toolchain():
         toolchain = ":rust_jarvis_impl",
         toolchain_type = "@rules_rust//rust:toolchain",
     )
+
+def jarvis_repository_set(
+        name = _DEFAULT_REPO_NAME,
+        version = DEFAULT_VERSION,
+        exec_triple = [""],
+        iso_date = None):
+    """Assemble a remote repository for building jarvis kernel, and setup custom toolchains
+    We will download only ther rust soruce and compiler_builtin sources, and create bazel
+    rule to re-build this target for jarvis architecture.
+
+    All other tools like rustc, rust_fmt ... will be taken from rust_bazel repository setup, so
+    for their configuration see rust_baze repository docs [https://bazelbuild.github.io/rules_rust/flatten.html#rust_repositories]
+
+    N.B. Maybe in future all tools will be downloded.
+
+    N.B. Til now the only target suppoted is x86_64
+
+    Args:
+      name (str, optional): the name of repository. The name will be suffixed with the target. Default to "jarvis_x86_64"
+      version (str, optional): the rust version (till now only nigthly is suported). Default to nightly
+      exec_triple (list, optional): list of triple supported. Default to x86_64-jarvis
+      iso_date(str): required for the nightly version. Put equal to the one passed to rust_repositories
+    """
+    print("WIP: Jarvis repository not completed...!!!")
+    pass
+
+    # TODO: replace with correct name
+    all_toolchains = []
+    #native.register_toolchains(*all_toolchains)
+    #native.register_toolchains("//kbin:dummy_cc_none_toolchain")
