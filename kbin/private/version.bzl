@@ -1,4 +1,4 @@
-DEFAULT_VERSION = "nigthly"
+DEFAULT_VERSION = "nightly"
 
 def check_version_for_repo(version, iso_date):
     """Verifiy that combination of version and iso_date ara valid"""
@@ -6,5 +6,5 @@ def check_version_for_repo(version, iso_date):
     if not version or not iso_date:
         fail("iso_date and version are required")
 
-    if version != "nigthly":
+    if version != "nightly":
         fail("The version must be nigthly")

@@ -1,3 +1,5 @@
+load("@rules_rust//rust:repositories.bzl", "produce_tool_path", "produce_tool_suburl")
+load("@rules_rust//rust:known_shas.bzl", "FILE_KEY_TO_SHA")
 load("//kbin/private:version.bzl", "DEFAULT_VERSION", "check_version_for_repo")
 load(
     "//kbin/private:helpers.bzl",
@@ -9,16 +11,104 @@ load(
     "join",
 )
 
-def _jarvis_repo_initialize(target_mapped):
+def _load_rust_srcs(ctx):
+    """Load rust source code into the repository
+    Args:
+      - ctx(repository_ctx): the repository context
+    """
+
+    tool_suburl = produce_tool_suburl("rust", ctx.attr.version, "src", ctx.attr.iso_date)
+    static_rust = ctx.os.environ.get("STATIC_RUST_URL", "https://static.rust-lang.org")
+    url = "{}/dist/{}.tar.gz".format(static_rust, tool_suburl)
+
+    tool_path = produce_tool_path("rust",ctx.attr.version, "src")
+    archive_path = tool_path + ".tar.gz"
+
+    ctx.download(
+        url,
+        output = archive_path,
+        sha256 = FILE_KEY_TO_SHA.get(tool_suburl) or "",
+    )
+    ctx.extract(
+        archive_path,
+        output = "lib/rustlib/src",
+        stripPrefix = tool_path + '/rust-src/lib/rustlib/src/rust',
+    )
+    ctx.template(
+        "lib/rustlib/src/library/core/BUILD",
+        ctx.attr._core_template,
+        substitutions = {
+            "workapsce_key": ctx.name,
+            "edition_key": ctx.attr.edition,
+        },
+        executable = False,
+    )
+    ctx.template(
+        "lib/rustlib/src/library/stdarch/crates/core_arch/BUILD",
+        ctx.attr._core_arch_template,
+        executable = False,
+    )
+
+def _load_compiler_builtin(ctx):
+    pass
+
+def _jarvis_build_std_repository_impl(ctx):
+    print("WIP: JARVIS repo implementation")
+    check_version_for_repo(ctx.attr.version, ctx.attr.iso_date)
+
+    _load_rust_srcs(ctx)
+
+    _load_compiler_builtin(ctx)
+
+    ctx.file("WORKSPACE.bazel", "")
+    ctx.file("BUILD.bazel", "")
+
+jarvis_build_std_repository = repository_rule(
+    doc = join([
+        "Build std core + compiler built-in repository",
+    ]),
+    attrs = {
+        "iso_date": attr.string(
+            doc = "The date of the source to download",
+        ),
+        "version": attr.string(
+            doc = "The version of the source to download",
+            default = DEFAULT_VERSION,
+        ),
+        "edition": attr.string(
+            doc = "The rust edition to compile with",
+            default = "2018",
+        ),
+        "_core_template": attr.label(
+            doc = "Core BUILD bazel file",
+            default = "//kbin/private/template:_BUILD_CORE",
+        ),
+        "_core_arch_template": attr.label(
+            doc = "Core arch bazel file",
+            default = "//kbin/private/template:_BUILD_CORE_ARCH",
+        ),
+    },
+    implementation = _jarvis_build_std_repository_impl,
+)
+
+def _jarvis_repo_initialize(name, iso_date, version):
     """ Initialize jarvis repository
 
     Args:
-      - target_mapped(str): target for which initilize the repository
+      - name(str): repo name
+      - iso_date(str): date of the source code to download
+      - version(str): version of source code to download
 
     Return:
       - the repository label
     """
-    repo_name = DEFAULT_REPO_NAME + "_" + target_mapped
+    repo_name = name + "_rust_buildstd"
+
+    jarvis_build_std_repository(
+        name = repo_name,
+        iso_date = iso_date,
+        version = version,
+    )
 
     return repo_name
 
@@ -47,12 +137,15 @@ def jarvis_repository_set(
 
     check_version_for_repo(version, iso_date)
 
+    _jarvis_repo_initialize(
+        name = name,
+        iso_date = iso_date,
+        version = version,
+    )
+
     all_toolchains = ["//kbin/private:{}".format(DUMMY_CC_TOOLCHAIN_NAME)]
 
     for arch in DEFAULT_SUPPORTED_TRIPLES:
-        _jarvis_repo_initialize(
-            target_mapped = DEFAULT_RUST_REPO_TRIPLES_MAPPER[arch],
-        )
         all_toolchains.append("//kbin/private:{}".format(compose_toolchain_name(DEFAULT_RUST_REPO_TRIPLES_MAPPER[arch])))
 
     native.register_toolchains(*all_toolchains)

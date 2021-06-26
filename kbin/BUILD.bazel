@@ -1,7 +1,3 @@
-load(":toolchain.bzl", "declare_jarvis_toolchain")
-
-declare_jarvis_toolchain()
-
 exports_files(
     [
         "linker.ld",

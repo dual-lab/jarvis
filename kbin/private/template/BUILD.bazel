@@ -1,0 +1,7 @@
+exports_files(
+    [
+        "_BUILD_CORE",
+        "_BUILD_CORE_ARCH",
+    ],
+    ["//kbin:__subpackages__"],
+)

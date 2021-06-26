@@ -21,11 +21,7 @@ def join(
     if not seq:
         fail("The seq to join is required")
 
-    _joined_string = ""
-    for v in seq:
-        _joined_string = _joined_string + str(v) + sep
-
-    return _joined_string
+    return sep.join(seq)
 
 def compose_toolchain_name(target_mapped):
     """Compose common toolchains name based on target mapped input

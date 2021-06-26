@@ -4,13 +4,13 @@ rust_library(
     name = "core",
     srcs = [
         ":core_sources",
-        "@rust_linux_x86_64//lib/rustlib/src/library/stdarch/crates/core_arch:core_arch_sources",
+        "@workapsce_key//lib/rustlib/src/library/stdarch/crates/core_arch:core_arch_sources",
     ],
     compile_data = [
         ":docs_sources",
-        "@rust_linux_x86_64//lib/rustlib/src/library/stdarch/crates/core_arch:docs_sources",
+        "@workapsce_key//lib/rustlib/src/library/stdarch/crates/core_arch:docs_sources",
     ],
-    edition = "2018",
+    edition = "edition_key",
     visibility = ["//visibility:public"],
 )
 
