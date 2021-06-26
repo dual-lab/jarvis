@@ -129,4 +129,4 @@ kbin_deps_pinned_rust_install()
 ##
 load("//kbin:repository.bzl", "jarvis_repository_set")
 
-jarvis_repository_set()
+jarvis_repository_set(iso_date = "2021-06-05")
