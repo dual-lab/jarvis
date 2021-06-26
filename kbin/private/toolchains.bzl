@@ -47,11 +47,11 @@ def declare_jarvis_toolchain(
     native.toolchain(
         name = name,
         exec_compatible_with = [
-            "@platforms//cpu:x86_64",
+            "@platforms//cpu:{}".format(arch),
             "@platforms//os:linux",
         ],
         target_compatible_with = [
-            "@platforms//cpu:x86_64",
+            "@platforms//cpu:{}".format(arch),
             "@platforms//os:none",
         ],
         toolchain = ":{}_impl".format(name),
