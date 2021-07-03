@@ -4,6 +4,9 @@ DEFAULT_SUPPORTED_TRIPLES = ["x86_64"]
 DEFAULT_RUST_REPO_TRIPLES_MAPPER = {
     "x86_64": "rust_linux_x86_64",
 }
+DEFAULT_RUST_COMPILER_BUILTIN_VERSION_MAPPER = {
+    "nightly": "0.1.46",
+}
 
 def join(
         seq,

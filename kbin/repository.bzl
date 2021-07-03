@@ -4,6 +4,7 @@ load("//kbin/private:version.bzl", "DEFAULT_VERSION", "check_version_for_repo")
 load(
     "//kbin/private:helpers.bzl",
     "DEFAULT_REPO_NAME",
+    "DEFAULT_RUST_COMPILER_BUILTIN_VERSION_MAPPER",
     "DEFAULT_RUST_REPO_TRIPLES_MAPPER",
     "DEFAULT_SUPPORTED_TRIPLES",
     "DUMMY_CC_TOOLCHAIN_NAME",
@@ -21,7 +22,7 @@ def _load_rust_srcs(ctx):
     static_rust = ctx.os.environ.get("STATIC_RUST_URL", "https://static.rust-lang.org")
     url = "{}/dist/{}.tar.gz".format(static_rust, tool_suburl)
 
-    tool_path = produce_tool_path("rust",ctx.attr.version, "src")
+    tool_path = produce_tool_path("rust", ctx.attr.version, "src")
     archive_path = tool_path + ".tar.gz"
 
     ctx.download(
@@ -32,7 +33,7 @@ def _load_rust_srcs(ctx):
     ctx.extract(
         archive_path,
         output = "lib/rustlib/src",
-        stripPrefix = tool_path + '/rust-src/lib/rustlib/src/rust',
+        stripPrefix = tool_path + "/rust-src/lib/rustlib/src/rust",
     )
     ctx.template(
         "lib/rustlib/src/library/core/BUILD",
@@ -50,7 +51,35 @@ def _load_rust_srcs(ctx):
     )
 
 def _load_compiler_builtin(ctx):
-    pass
+    compiler_builtin_version = DEFAULT_RUST_COMPILER_BUILTIN_VERSION_MAPPER[ctx.attr.version]
+
+    if not compiler_builtin_version:
+        fail("No  compiler builtin version for rust v{}".format(ctx.attr.version))
+
+    static_rust_compiler_builtin = ctx.os.environ.get("STATIC_COMPILER_BUILTIN", "https://github.com/rust-lang/compiler-builtins/archive/refs/tags")
+    url = "{}/{}.tar.gz".format(static_rust_compiler_builtin, compiler_builtin_version)
+
+    archive_path = produce_tool_path("compiler_builtins", compiler_builtin_version, "src") + ".tar.gz"
+    ctx.download(
+        url,
+        output = archive_path,
+    )
+
+    ctx.extract(
+        archive_path,
+        output = "lib/rustlib/compiler_builtins",
+        stripPrefix = "compiler-builtins-" + compiler_builtin_version,
+    )
+
+    ctx.template(
+        "lib/rustlib/compiler_builtins/BUILD",
+        ctx.attr._compiler_builtins_template,
+        executable = False,
+        substitutions = {
+            "edition_key": "2015",
+            "workapsce_key": ctx.name
+        },
+    )
 
 def _jarvis_build_std_repository_impl(ctx):
     print("WIP: JARVIS repo implementation")
@@ -86,6 +115,10 @@ jarvis_build_std_repository = repository_rule(
         "_core_arch_template": attr.label(
             doc = "Core arch bazel file",
             default = "//kbin/private/template:_BUILD_CORE_ARCH",
+        ),
+        "_compiler_builtins_template": attr.label(
+            doc = "Compiler builtins bazel file",
+            default = "//kbin/private/template:_BUILD_COMPILER_BUILTINS",
         ),
     },
     implementation = _jarvis_build_std_repository_impl,

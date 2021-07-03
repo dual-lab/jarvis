@@ -2701,7 +2701,7 @@
     {
       "crate_context": {
         "pkg_name": "hermit-abi",
-        "pkg_version": "0.1.18",
+        "pkg_version": "0.1.19",
         "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
@@ -2749,7 +2749,7 @@
         "features": [
           "default"
         ],
-        "workspace_path_to_crate": "@kbuild_deps__hermit_abi__0_1_18//",
+        "workspace_path_to_crate": "@kbuild_deps__hermit_abi__0_1_19//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
@@ -2768,9 +2768,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "322f4de77956e22ed0e5032c359a0f1273f1f7f0d79bfa3b8ffbc730d7fbcc5c",
-        "registry_url": "https://crates.io/api/v1/crates/hermit-abi/0.1.18/download",
-        "expected_build_path": "remote/BUILD.hermit-abi-0.1.18.bazel",
+        "sha256": "62b467343b94ba476dcb2500d242dadbb39557df889310ac77c5d99100aaac33",
+        "registry_url": "https://crates.io/api/v1/crates/hermit-abi/0.1.19/download",
+        "expected_build_path": "remote/BUILD.hermit-abi-0.1.19.bazel",
         "lib_target_name": "hermit-abi",
         "is_proc_macro": false
       },

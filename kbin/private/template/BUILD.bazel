@@ -2,6 +2,7 @@ exports_files(
     [
         "_BUILD_CORE",
         "_BUILD_CORE_ARCH",
+        "_BUILD_COMPILER_BUILTINS",
     ],
     ["//kbin:__subpackages__"],
 )
