@@ -82,7 +82,6 @@ def _load_compiler_builtin(ctx):
     )
 
 def _jarvis_build_std_repository_impl(ctx):
-    print("WIP: JARVIS repo implementation")
     check_version_for_repo(ctx.attr.version, ctx.attr.iso_date)
 
     _load_rust_srcs(ctx)
