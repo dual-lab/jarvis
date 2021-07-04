@@ -1,7 +1,7 @@
 exports_files(
     [
         "linker.ld",
-        "wasm32-jarvis.json",
+        "x86_64-jarvis.json",
     ],
     ["//kbin:__subpackages__"],
 )

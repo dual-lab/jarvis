@@ -77,7 +77,7 @@ def _load_compiler_builtin(ctx):
         executable = False,
         substitutions = {
             "edition_key": "2015",
-            "workapsce_key": ctx.name
+            "workapsce_key": ctx.name,
         },
     )
 

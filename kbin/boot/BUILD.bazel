@@ -1,4 +1,4 @@
-load("@rules_rust//rust:rust.bzl", "rust_binary")
+load("//kbin:rust.bzl", "rust_binary")
 load(":defs.bzl", "deps")
 
 rust_binary(

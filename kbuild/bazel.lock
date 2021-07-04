@@ -2626,9 +2626,9 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@kbuild_deps__unicode_segmentation__1_7_1//:unicode_segmentation",
+              "buildable_target": "@kbuild_deps__unicode_segmentation__1_8_0//:unicode_segmentation",
               "name": "unicode-segmentation",
-              "version": "1.7.1",
+              "version": "1.8.0",
               "is_proc_macro": false
             }
           ],
@@ -2677,9 +2677,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__unicode_segmentation__1_7_1//:unicode_segmentation",
+                "buildable_target": "@kbuild_deps__unicode_segmentation__1_8_0//:unicode_segmentation",
                 "name": "unicode-segmentation",
-                "version": "1.7.1",
+                "version": "1.8.0",
                 "is_proc_macro": false
               }
             ],
@@ -4782,7 +4782,7 @@
     {
       "crate_context": {
         "pkg_name": "structopt",
-        "pkg_version": "0.3.21",
+        "pkg_version": "0.3.22",
         "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
@@ -4822,9 +4822,9 @@
           ],
           "proc_macro_dependencies": [
             {
-              "buildable_target": "@kbuild_deps__structopt_derive__0_4_14//:structopt_derive",
+              "buildable_target": "@kbuild_deps__structopt_derive__0_4_15//:structopt_derive",
               "name": "structopt-derive",
-              "version": "0.4.14",
+              "version": "0.4.15",
               "is_proc_macro": true
             }
           ],
@@ -4843,7 +4843,7 @@
         "features": [
           "default"
         ],
-        "workspace_path_to_crate": "@kbuild_deps__structopt__0_3_21//",
+        "workspace_path_to_crate": "@kbuild_deps__structopt__0_3_22//",
         "workspace_member_dependents": [
           ""
         ],
@@ -4886,6 +4886,12 @@
             "kind": "example",
             "name": "enum_in_args",
             "path": "examples/enum_in_args.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "example",
+            "name": "enum_in_args_with_strum",
+            "path": "examples/enum_in_args_with_strum.rs",
             "edition": "2018"
           },
           {
@@ -5046,6 +5052,12 @@
           },
           {
             "kind": "test",
+            "name": "generics",
+            "path": "tests/generics.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "test",
             "name": "issues",
             "path": "tests/issues.rs",
             "edition": "2018"
@@ -5140,9 +5152,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "5277acd7ee46e63e5168a80734c9f6ee81b1367a7d8772a2d765df2a3705d28c",
-        "registry_url": "https://crates.io/api/v1/crates/structopt/0.3.21/download",
-        "expected_build_path": "remote/BUILD.structopt-0.3.21.bazel",
+        "sha256": "69b041cdcb67226aca307e6e7be44c8806423d83e018bd662360a93dabce4d71",
+        "registry_url": "https://crates.io/api/v1/crates/structopt/0.3.22/download",
+        "expected_build_path": "remote/BUILD.structopt-0.3.22.bazel",
         "lib_target_name": "structopt",
         "is_proc_macro": false
       },
@@ -5166,9 +5178,9 @@
             ],
             "proc_macro_dependencies": [
               {
-                "buildable_target": "@kbuild_deps__structopt_derive__0_4_14//:structopt_derive",
+                "buildable_target": "@kbuild_deps__structopt_derive__0_4_15//:structopt_derive",
                 "name": "structopt-derive",
-                "version": "0.4.14",
+                "version": "0.4.15",
                 "is_proc_macro": true
               }
             ],
@@ -5189,7 +5201,7 @@
     {
       "crate_context": {
         "pkg_name": "structopt-derive",
-        "pkg_version": "0.4.14",
+        "pkg_version": "0.4.15",
         "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
@@ -5259,7 +5271,7 @@
           "rating": "notice"
         },
         "features": [],
-        "workspace_path_to_crate": "@kbuild_deps__structopt_derive__0_4_14//",
+        "workspace_path_to_crate": "@kbuild_deps__structopt_derive__0_4_15//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
@@ -5278,9 +5290,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "5ba9cdfda491b814720b6b06e0cac513d922fc407582032e8706e9f137976f90",
-        "registry_url": "https://crates.io/api/v1/crates/structopt-derive/0.4.14/download",
-        "expected_build_path": "remote/BUILD.structopt-derive-0.4.14.bazel",
+        "sha256": "7813934aecf5f51a54775e00068c237de98489463968231a51746bbbc03f9c10",
+        "registry_url": "https://crates.io/api/v1/crates/structopt-derive/0.4.15/download",
+        "expected_build_path": "remote/BUILD.structopt-derive-0.4.15.bazel",
         "lib_target_name": "structopt-derive",
         "is_proc_macro": true
       },
@@ -6031,8 +6043,8 @@
     {
       "crate_context": {
         "pkg_name": "unicode-segmentation",
-        "pkg_version": "1.7.1",
-        "edition": "2015",
+        "pkg_version": "1.8.0",
+        "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
           "skipped_deps": [],
@@ -6070,7 +6082,7 @@
           "rating": "notice"
         },
         "features": [],
-        "workspace_path_to_crate": "@kbuild_deps__unicode_segmentation__1_7_1//",
+        "workspace_path_to_crate": "@kbuild_deps__unicode_segmentation__1_8_0//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
@@ -6081,13 +6093,25 @@
             "kind": "bench",
             "name": "graphemes",
             "path": "benches/graphemes.rs",
-            "edition": "2015"
+            "edition": "2018"
+          },
+          {
+            "kind": "bench",
+            "name": "unicode_words",
+            "path": "benches/unicode_words.rs",
+            "edition": "2018"
+          },
+          {
+            "kind": "bench",
+            "name": "word_bounds",
+            "path": "benches/word_bounds.rs",
+            "edition": "2018"
           },
           {
             "kind": "lib",
             "name": "unicode-segmentation",
             "path": "src/lib.rs",
-            "edition": "2015"
+            "edition": "2018"
           }
         ],
         "build_script_target": null,
@@ -6095,9 +6119,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "bb0d2e7be6ae3a5fa87eed5fb451aff96f2573d2694942e40543ae0bbe19c796",
-        "registry_url": "https://crates.io/api/v1/crates/unicode-segmentation/1.7.1/download",
-        "expected_build_path": "remote/BUILD.unicode-segmentation-1.7.1.bazel",
+        "sha256": "8895849a949e7845e06bd6dc1aa51731a103c42707010a5b591c0038fb73385b",
+        "registry_url": "https://crates.io/api/v1/crates/unicode-segmentation/1.8.0/download",
+        "expected_build_path": "remote/BUILD.unicode-segmentation-1.8.0.bazel",
         "lib_target_name": "unicode-segmentation",
         "is_proc_macro": false
       },
@@ -7009,7 +7033,7 @@
       "exitcode": "1.1.2",
       "log": "0.4.14",
       "serde": "1.0.126",
-      "structopt": "0.3.21"
+      "structopt": "0.3.22"
     },
     "build": {},
     "dev": {}
