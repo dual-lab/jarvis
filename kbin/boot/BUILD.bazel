@@ -2,7 +2,7 @@ load("//kbin:rust.bzl", "rust_binary")
 load(":defs.bzl", "deps")
 
 rust_binary(
-    name = "boot",
+    name = "jarvis-kernel",
     srcs = glob(["src/**/*.rs"]),
     compile_data = [":asm_sources"],
     crate_root = "src/main.rs",

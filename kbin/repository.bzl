@@ -165,8 +165,6 @@ def jarvis_repository_set(
       exec_triple (list, optional): list of triple supported. Default to x86_64-jarvis
       iso_date(str): required for the nightly version. Put equal to the one passed to rust_repositories
     """
-    print("WIP: Jarvis repository not completed...!!!")
-
     check_version_for_repo(version, iso_date)
 
     _jarvis_repo_initialize(
