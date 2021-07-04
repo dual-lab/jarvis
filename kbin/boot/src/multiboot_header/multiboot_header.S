@@ -1,5 +1,4 @@
 .section .multiboot_header, "a", @progbits
-.intel_syntax noprefix
 .code32
 
 .set MULTIBOOT_MAGIC, 0xe85250d6

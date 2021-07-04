@@ -11,11 +11,5 @@
   "disable-redzone": true,
   "features": "-mmx,-sse,+soft-float",
   "panic-strategy": "abort",
-  "target-c-int-width": "32",
-  "pre-link-args": {
-    "ld": [
-      "-n",
-      "-T","linker.ld"
-    ]
-  }
+  "target-c-int-width": "32"
 }

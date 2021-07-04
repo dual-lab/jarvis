@@ -8,6 +8,7 @@ rust_library(
         exclude = ["src/bin/*.rs"],
     ),
     crate_name = "kbuild",
+    edition = "2018",
     rustc_env_files = ["//:generate_rust_env_file"],
     deps = lib_deps(),
 )
@@ -15,6 +16,7 @@ rust_library(
 rust_binary(
     name = "kbuild",
     srcs = ["src/bin/cargo-kbuild.rs"],
+    edition = "2018",
     rustc_env_files = ["//:generate_rust_env_file"],
     deps = bin_deps(),
 )

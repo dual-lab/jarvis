@@ -1,0 +1,18 @@
+load(":dummy_utils.bzl", "dummy_cc_toolchain", "dummy_deps")
+load(":helpers.bzl", "DUMMY_CC_TOOLCHAIN_NAME")
+load(":toolchains.bzl", "setup_jarvis_toolchains")
+
+dummy_deps(name = "rust_nostd")
+
+dummy_cc_toolchain(name = "dummy_cc_none")
+
+toolchain(
+    name = DUMMY_CC_TOOLCHAIN_NAME,
+    target_compatible_with = [
+        "@platforms//os:none",
+    ],
+    toolchain = "//kbin/private:dummy_cc_none",
+    toolchain_type = "@bazel_tools//tools/cpp:toolchain_type",
+)
+
+setup_jarvis_toolchains()

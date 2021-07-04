@@ -1,0 +1,19 @@
+load("@rules_rust//rust:rust.bzl", "rust_library")
+
+rust_library(
+    name = "compiler_builtins",
+    srcs = [
+        ":compiler_builtins_sources",
+    ],
+    deps = ["@workapsce_key//lib/rustlib/src/library/core:core"],
+    edition = "edition_key",
+    crate_features = ["compiler-builtins", "mem"],
+    visibility = ["//visibility:public"],
+)
+
+filegroup(
+    name = "compiler_builtins_sources",
+    srcs = glob([
+        "src/**/*.rs",
+    ]),
+)
