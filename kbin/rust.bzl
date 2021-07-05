@@ -50,18 +50,17 @@ def _rust_binary_impl(ctx):
     toolchain = find_toolchain(ctx)
     crate_name = crate_name_from_attr(ctx.attr)
 
-    
     name_suffix = toolchain.target_arch.split("/")
     name_suffix = name_suffix[len(name_suffix) - 1]
 
     output = ctx.actions.declare_file(ctx.label.name + name_suffix + toolchain.binary_ext)
-    
+
     return rustc_compile_action(
         ctx = ctx,
         toolchain = toolchain,
         crate_type = ctx.attr.crate_type,
         crate_info = rust_common.crate_info(
-            name = crate_name, 
+            name = crate_name,
             type = ctx.attr.crate_type,
             root = crate_root_src(ctx.attr, ctx.files.srcs, ctx.attr.crate_type),
             srcs = depset(ctx.files.srcs),
