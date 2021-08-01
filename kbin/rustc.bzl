@@ -15,11 +15,11 @@ load(
     "get_preferred_artifact",
 )
 
-def expand_list_element_locations(ctx, args, data):
-    """ Forked from https://github.com/bazelbuild/rules_rust/blob/main/rust/private/rustc.bzl
+# def expand_list_element_locations(ctx, args, data):
+#     """ Forked from https://github.com/bazelbuild/rules_rust/blob/main/rust/private/rustc.bzl
 
-    """
-    return [expand_locations(ctx, arg, data) for arg in args]
+#     """
+#     return [expand_locations(ctx, arg, data) for arg in args]
 
 def expand_dict_value_locations(ctx, env, data):
     """ Forked from https://github.com/bazelbuild/rules_rust/blob/main/rust/private/rustc.bzl
@@ -400,11 +400,11 @@ def construct_arguments(
 
     data_paths = getattr(attr, "data", []) + getattr(attr, "compile_data", [])
     args.add_all(
-        expand_list_element_locations(
-            ctx,
-            getattr(attr, "rustc_flags", []),
-            data_paths,
-        ),
+        #expand_list_element_locations(
+        #    ctx,
+        getattr(attr, "rustc_flags", []),
+        #    data_paths,
+        #),
     )
     if crate_info.edition != "2015":
         args.add("--edition={}".format(crate_info.edition))

@@ -253,7 +253,7 @@
     {
       "crate_context": {
         "pkg_name": "anyhow",
-        "pkg_version": "1.0.41",
+        "pkg_version": "1.0.42",
         "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
@@ -295,7 +295,7 @@
           "default",
           "std"
         ],
-        "workspace_path_to_crate": "@kbuild_deps__anyhow__1_0_41//",
+        "workspace_path_to_crate": "@kbuild_deps__anyhow__1_0_42//",
         "workspace_member_dependents": [
           ""
         ],
@@ -399,9 +399,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "15af2628f6890fe2609a3b91bef4c83450512802e59489f9c1cb1fa5df064a61",
-        "registry_url": "https://crates.io/api/v1/crates/anyhow/1.0.41/download",
-        "expected_build_path": "remote/BUILD.anyhow-1.0.41.bazel",
+        "sha256": "595d3cfa7a60d4555cb5067b99f07142a08ea778de5cf993f7b75c7d8fabc486",
+        "registry_url": "https://crates.io/api/v1/crates/anyhow/1.0.42/download",
+        "expected_build_path": "remote/BUILD.anyhow-1.0.42.bazel",
         "lib_target_name": "anyhow",
         "is_proc_macro": false
       },
@@ -467,9 +467,9 @@
             "deps": {
               "dependencies": [
                 {
-                  "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                  "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                   "name": "libc",
-                  "version": "0.2.97",
+                  "version": "0.2.98",
                   "is_proc_macro": false
                 }
               ],
@@ -571,9 +571,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -594,9 +594,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -617,9 +617,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -663,9 +663,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -686,9 +686,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -1514,9 +1514,9 @@
               "is_proc_macro": false
             },
             {
-              "buildable_target": "@kbuild_deps__serde__1_0_126//:serde",
+              "buildable_target": "@kbuild_deps__serde__1_0_127//:serde",
               "name": "serde",
-              "version": "1.0.126",
+              "version": "1.0.127",
               "is_proc_macro": false
             },
             {
@@ -1585,9 +1585,9 @@
                 "is_proc_macro": false
               },
               {
-                "buildable_target": "@kbuild_deps__serde__1_0_126//:serde",
+                "buildable_target": "@kbuild_deps__serde__1_0_127//:serde",
                 "name": "serde",
-                "version": "1.0.126",
+                "version": "1.0.127",
                 "is_proc_macro": false
               },
               {
@@ -1787,9 +1787,9 @@
             "deps": {
               "dependencies": [
                 {
-                  "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                  "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                   "name": "libc",
-                  "version": "0.2.97",
+                  "version": "0.2.98",
                   "is_proc_macro": false
                 }
               ],
@@ -1885,9 +1885,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -1908,9 +1908,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -1931,9 +1931,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -1977,9 +1977,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -2000,9 +2000,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -2346,9 +2346,9 @@
             "deps": {
               "dependencies": [
                 {
-                  "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                  "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                   "name": "libc",
-                  "version": "0.2.97",
+                  "version": "0.2.98",
                   "is_proc_macro": false
                 }
               ],
@@ -2454,9 +2454,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               },
               {
@@ -2483,9 +2483,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               },
               {
@@ -2512,9 +2512,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               },
               {
@@ -2541,9 +2541,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               },
               {
@@ -2570,9 +2570,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               },
               {
@@ -2727,9 +2727,9 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+              "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
               "name": "libc",
-              "version": "0.2.97",
+              "version": "0.2.98",
               "is_proc_macro": false
             }
           ],
@@ -2780,9 +2780,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__libc__0_2_97//:libc",
+                "buildable_target": "@kbuild_deps__libc__0_2_98//:libc",
                 "name": "libc",
-                "version": "0.2.97",
+                "version": "0.2.98",
                 "is_proc_macro": false
               }
             ],
@@ -3002,7 +3002,7 @@
     {
       "crate_context": {
         "pkg_name": "libc",
-        "pkg_version": "0.2.97",
+        "pkg_version": "0.2.98",
         "edition": "2015",
         "raze_settings": {
           "additional_deps": [],
@@ -3044,7 +3044,7 @@
           "default",
           "std"
         ],
-        "workspace_path_to_crate": "@kbuild_deps__libc__0_2_97//",
+        "workspace_path_to_crate": "@kbuild_deps__libc__0_2_98//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
@@ -3074,9 +3074,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "12b8adadd720df158f4d70dfe7ccc6adb0472d7c55ca83445f6a5ab3e36f8fb6",
-        "registry_url": "https://crates.io/api/v1/crates/libc/0.2.97/download",
-        "expected_build_path": "remote/BUILD.libc-0.2.97.bazel",
+        "sha256": "320cfe77175da3a483efed4bc0adc1968ca050b098ce4f2f1c13a56626128790",
+        "registry_url": "https://crates.io/api/v1/crates/libc/0.2.98/download",
+        "expected_build_path": "remote/BUILD.libc-0.2.98.bazel",
         "lib_target_name": "libc",
         "is_proc_macro": false
       },
@@ -3352,9 +3352,9 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+              "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
               "name": "proc-macro2",
-              "version": "1.0.27",
+              "version": "1.0.28",
               "is_proc_macro": false
             },
             {
@@ -3364,9 +3364,9 @@
               "is_proc_macro": false
             },
             {
-              "buildable_target": "@kbuild_deps__syn__1_0_73//:syn",
+              "buildable_target": "@kbuild_deps__syn__1_0_74//:syn",
               "name": "syn",
-              "version": "1.0.73",
+              "version": "1.0.74",
               "is_proc_macro": false
             }
           ],
@@ -3456,9 +3456,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+                "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
                 "name": "proc-macro2",
-                "version": "1.0.27",
+                "version": "1.0.28",
                 "is_proc_macro": false
               },
               {
@@ -3468,9 +3468,9 @@
                 "is_proc_macro": false
               },
               {
-                "buildable_target": "@kbuild_deps__syn__1_0_73//:syn",
+                "buildable_target": "@kbuild_deps__syn__1_0_74//:syn",
                 "name": "syn",
-                "version": "1.0.73",
+                "version": "1.0.74",
                 "is_proc_macro": false
               }
             ],
@@ -3532,9 +3532,9 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+              "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
               "name": "proc-macro2",
-              "version": "1.0.27",
+              "version": "1.0.28",
               "is_proc_macro": false
             },
             {
@@ -3601,9 +3601,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+                "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
                 "name": "proc-macro2",
-                "version": "1.0.27",
+                "version": "1.0.28",
                 "is_proc_macro": false
               },
               {
@@ -3638,7 +3638,7 @@
     {
       "crate_context": {
         "pkg_name": "proc-macro2",
-        "pkg_version": "1.0.27",
+        "pkg_version": "1.0.28",
         "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
@@ -3687,7 +3687,7 @@
           "default",
           "proc-macro"
         ],
-        "workspace_path_to_crate": "@kbuild_deps__proc_macro2__1_0_27//",
+        "workspace_path_to_crate": "@kbuild_deps__proc_macro2__1_0_28//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
@@ -3741,9 +3741,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "f0d8caf72986c1a598726adc988bb5984792ef84f5ee5aa50209145ee8077038",
-        "registry_url": "https://crates.io/api/v1/crates/proc-macro2/1.0.27/download",
-        "expected_build_path": "remote/BUILD.proc-macro2-1.0.27.bazel",
+        "sha256": "5c7ed8b8c7b886ea3ed7dde405212185f423ab44682667c8c6dd14aa1d9f6612",
+        "registry_url": "https://crates.io/api/v1/crates/proc-macro2/1.0.28/download",
+        "expected_build_path": "remote/BUILD.proc-macro2-1.0.28.bazel",
         "lib_target_name": "proc-macro2",
         "is_proc_macro": false
       },
@@ -3803,9 +3803,9 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+              "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
               "name": "proc-macro2",
-              "version": "1.0.27",
+              "version": "1.0.28",
               "is_proc_macro": false
             }
           ],
@@ -3869,9 +3869,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+                "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
                 "name": "proc-macro2",
-                "version": "1.0.27",
+                "version": "1.0.28",
                 "is_proc_macro": false
               }
             ],
@@ -4424,7 +4424,7 @@
     {
       "crate_context": {
         "pkg_name": "serde",
-        "pkg_version": "1.0.126",
+        "pkg_version": "1.0.127",
         "edition": "2015",
         "raze_settings": {
           "additional_deps": [],
@@ -4451,9 +4451,9 @@
           "dependencies": [],
           "proc_macro_dependencies": [
             {
-              "buildable_target": "@kbuild_deps__serde_derive__1_0_126//:serde_derive",
+              "buildable_target": "@kbuild_deps__serde_derive__1_0_127//:serde_derive",
               "name": "serde_derive",
-              "version": "1.0.126",
+              "version": "1.0.127",
               "is_proc_macro": true
             }
           ],
@@ -4463,9 +4463,9 @@
           "build_data_dependencies": [],
           "dev_dependencies": [
             {
-              "buildable_target": "@kbuild_deps__serde_derive__1_0_126//:serde_derive",
+              "buildable_target": "@kbuild_deps__serde_derive__1_0_127//:serde_derive",
               "name": "serde_derive",
-              "version": "1.0.126",
+              "version": "1.0.127",
               "is_proc_macro": true
             }
           ],
@@ -4482,7 +4482,7 @@
           "serde_derive",
           "std"
         ],
-        "workspace_path_to_crate": "@kbuild_deps__serde__1_0_126//",
+        "workspace_path_to_crate": "@kbuild_deps__serde__1_0_127//",
         "workspace_member_dependents": [
           ""
         ],
@@ -4508,9 +4508,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "ec7505abeacaec74ae4778d9d9328fe5a5d04253220a85c4ee022239fc996d03",
-        "registry_url": "https://crates.io/api/v1/crates/serde/1.0.126/download",
-        "expected_build_path": "remote/BUILD.serde-1.0.126.bazel",
+        "sha256": "f03b9878abf6d14e6779d3f24f07b2cfa90352cfec4acc5aab8f1ac7f146fae8",
+        "registry_url": "https://crates.io/api/v1/crates/serde/1.0.127/download",
+        "expected_build_path": "remote/BUILD.serde-1.0.127.bazel",
         "lib_target_name": "serde",
         "is_proc_macro": false
       },
@@ -4521,9 +4521,9 @@
             "dependencies": [],
             "proc_macro_dependencies": [
               {
-                "buildable_target": "@kbuild_deps__serde_derive__1_0_126//:serde_derive",
+                "buildable_target": "@kbuild_deps__serde_derive__1_0_127//:serde_derive",
                 "name": "serde_derive",
-                "version": "1.0.126",
+                "version": "1.0.127",
                 "is_proc_macro": true
               }
             ],
@@ -4533,9 +4533,9 @@
             "build_data_dependencies": [],
             "dev_dependencies": [
               {
-                "buildable_target": "@kbuild_deps__serde_derive__1_0_126//:serde_derive",
+                "buildable_target": "@kbuild_deps__serde_derive__1_0_127//:serde_derive",
                 "name": "serde_derive",
-                "version": "1.0.126",
+                "version": "1.0.127",
                 "is_proc_macro": true
               }
             ],
@@ -4551,7 +4551,7 @@
     {
       "crate_context": {
         "pkg_name": "serde_derive",
-        "pkg_version": "1.0.126",
+        "pkg_version": "1.0.127",
         "edition": "2015",
         "raze_settings": {
           "additional_deps": [],
@@ -4577,9 +4577,9 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+              "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
               "name": "proc-macro2",
-              "version": "1.0.27",
+              "version": "1.0.28",
               "is_proc_macro": false
             },
             {
@@ -4589,9 +4589,9 @@
               "is_proc_macro": false
             },
             {
-              "buildable_target": "@kbuild_deps__syn__1_0_73//:syn",
+              "buildable_target": "@kbuild_deps__syn__1_0_74//:syn",
               "name": "syn",
-              "version": "1.0.73",
+              "version": "1.0.74",
               "is_proc_macro": false
             }
           ],
@@ -4611,7 +4611,7 @@
         "features": [
           "default"
         ],
-        "workspace_path_to_crate": "@kbuild_deps__serde_derive__1_0_126//",
+        "workspace_path_to_crate": "@kbuild_deps__serde_derive__1_0_127//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
@@ -4635,9 +4635,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "963a7dbc9895aeac7ac90e74f34a5d5261828f79df35cbed41e10189d3804d43",
-        "registry_url": "https://crates.io/api/v1/crates/serde_derive/1.0.126/download",
-        "expected_build_path": "remote/BUILD.serde_derive-1.0.126.bazel",
+        "sha256": "a024926d3432516606328597e0f224a51355a493b49fdd67e9209187cbe55ecc",
+        "registry_url": "https://crates.io/api/v1/crates/serde_derive/1.0.127/download",
+        "expected_build_path": "remote/BUILD.serde_derive-1.0.127.bazel",
         "lib_target_name": "serde_derive",
         "is_proc_macro": true
       },
@@ -4647,9 +4647,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+                "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
                 "name": "proc-macro2",
-                "version": "1.0.27",
+                "version": "1.0.28",
                 "is_proc_macro": false
               },
               {
@@ -4659,9 +4659,9 @@
                 "is_proc_macro": false
               },
               {
-                "buildable_target": "@kbuild_deps__syn__1_0_73//:syn",
+                "buildable_target": "@kbuild_deps__syn__1_0_74//:syn",
                 "name": "syn",
-                "version": "1.0.73",
+                "version": "1.0.74",
                 "is_proc_macro": false
               }
             ],
@@ -5233,9 +5233,9 @@
               "is_proc_macro": false
             },
             {
-              "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+              "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
               "name": "proc-macro2",
-              "version": "1.0.27",
+              "version": "1.0.28",
               "is_proc_macro": false
             },
             {
@@ -5251,9 +5251,9 @@
               "is_proc_macro": false
             },
             {
-              "buildable_target": "@kbuild_deps__syn__1_0_73//:syn",
+              "buildable_target": "@kbuild_deps__syn__1_0_74//:syn",
               "name": "syn",
-              "version": "1.0.73",
+              "version": "1.0.74",
               "is_proc_macro": false
             }
           ],
@@ -5308,9 +5308,9 @@
                 "is_proc_macro": false
               },
               {
-                "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+                "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
                 "name": "proc-macro2",
-                "version": "1.0.27",
+                "version": "1.0.28",
                 "is_proc_macro": false
               },
               {
@@ -5326,9 +5326,9 @@
                 "is_proc_macro": false
               },
               {
-                "buildable_target": "@kbuild_deps__syn__1_0_73//:syn",
+                "buildable_target": "@kbuild_deps__syn__1_0_74//:syn",
                 "name": "syn",
-                "version": "1.0.73",
+                "version": "1.0.74",
                 "is_proc_macro": false
               }
             ],
@@ -5350,7 +5350,7 @@
     {
       "crate_context": {
         "pkg_name": "syn",
-        "pkg_version": "1.0.73",
+        "pkg_version": "1.0.74",
         "edition": "2018",
         "raze_settings": {
           "additional_deps": [],
@@ -5376,9 +5376,9 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+              "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
               "name": "proc-macro2",
-              "version": "1.0.27",
+              "version": "1.0.28",
               "is_proc_macro": false
             },
             {
@@ -5417,7 +5417,7 @@
           "proc-macro",
           "quote"
         ],
-        "workspace_path_to_crate": "@kbuild_deps__syn__1_0_73//",
+        "workspace_path_to_crate": "@kbuild_deps__syn__1_0_74//",
         "workspace_member_dependents": [],
         "workspace_member_dev_dependents": [],
         "workspace_member_build_dependents": [],
@@ -5609,9 +5609,9 @@
         "source_details": {
           "git_data": null
         },
-        "sha256": "f71489ff30030d2ae598524f61326b902466f72a0fb1a8564c001cc63425bcc7",
-        "registry_url": "https://crates.io/api/v1/crates/syn/1.0.73/download",
-        "expected_build_path": "remote/BUILD.syn-1.0.73.bazel",
+        "sha256": "1873d832550d4588c3dbc20f01361ab00bfe741048f71e3fecf145a7cc18b29c",
+        "registry_url": "https://crates.io/api/v1/crates/syn/1.0.74/download",
+        "expected_build_path": "remote/BUILD.syn-1.0.74.bazel",
         "lib_target_name": "syn",
         "is_proc_macro": false
       },
@@ -5621,9 +5621,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__proc_macro2__1_0_27//:proc_macro2",
+                "buildable_target": "@kbuild_deps__proc_macro2__1_0_28//:proc_macro2",
                 "name": "proc-macro2",
-                "version": "1.0.27",
+                "version": "1.0.28",
                 "is_proc_macro": false
               },
               {
@@ -5942,9 +5942,9 @@
         "default_deps": {
           "dependencies": [
             {
-              "buildable_target": "@kbuild_deps__serde__1_0_126//:serde",
+              "buildable_target": "@kbuild_deps__serde__1_0_127//:serde",
               "name": "serde",
-              "version": "1.0.126",
+              "version": "1.0.127",
               "is_proc_macro": false
             }
           ],
@@ -6019,9 +6019,9 @@
           "deps": {
             "dependencies": [
               {
-                "buildable_target": "@kbuild_deps__serde__1_0_126//:serde",
+                "buildable_target": "@kbuild_deps__serde__1_0_127//:serde",
                 "name": "serde",
-                "version": "1.0.126",
+                "version": "1.0.127",
                 "is_proc_macro": false
               }
             ],
@@ -7027,12 +7027,12 @@
   ],
   "member_packages_version_mapping": {
     "normal": {
-      "anyhow": "1.0.41",
+      "anyhow": "1.0.42",
       "confy": "0.4.0",
       "env_logger": "0.8.4",
       "exitcode": "1.1.2",
       "log": "0.4.14",
-      "serde": "1.0.126",
+      "serde": "1.0.127",
       "structopt": "0.3.22"
     },
     "build": {},
