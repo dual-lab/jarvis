@@ -7,7 +7,7 @@ pub use cli::Cli;
 /// Re-export command
 pub use command::{build, configure, error, runner, Command};
 /// Re-export kconfig
-pub use config::KConfig;
+pub use config::{KConfig, BuildMode, BuildConfig};
 
 #[cfg(test)]
 mod tests {

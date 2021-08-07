@@ -1,4 +1,4 @@
-use crate::KConfig;
+use crate::{KConfig, BuildMode};
 use anyhow::Result;
 use std::path::PathBuf;
 use structopt::StructOpt;
@@ -20,7 +20,19 @@ impl Build {
         }
     }
     /// Build of iso pack flow
-    pub fn build(self, _config: KConfig) -> Result<()> {
+    pub fn build(self, config: KConfig) -> Result<()> {
+        match config.build.mode {
+            BuildMode::GRUB => self.grub_mkrescue(&config)
+        }
+    }
+}
+
+impl Build {
+    fn grub_mkrescue(&self, _config: &KConfig) -> Result<()> {
+        // TODO: check necessary tools
+        // TODO: extract working direcotry name + grub menu entry name
+        // TODO: create the iso with thr grub_mkrescue command
+        // TODO: clean up the working direcotry
         Ok(())
     }
 }

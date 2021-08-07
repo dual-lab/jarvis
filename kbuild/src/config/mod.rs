@@ -4,7 +4,7 @@ use std::env;
 
 #[derive(Serialize, Deserialize)]
 pub struct KConfig {
-    build: BuildConfig,
+   pub build: BuildConfig,
 }
 
 impl KConfig {
@@ -25,7 +25,7 @@ impl Default for KConfig {
 
 #[derive(Serialize, Deserialize)]
 pub struct BuildConfig {
-    mode: BuildMode,
+   pub mode: BuildMode,
 }
 
 #[derive(Serialize, Deserialize)]
