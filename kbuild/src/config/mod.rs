@@ -9,7 +9,7 @@ pub struct KConfig {
 
 impl KConfig {
     pub fn name() -> String {
-        env::var("KCONFIG_NAME").unwrap_or(String::from("kconfig.toml"))
+        env::var("KCONFIG_NAME").unwrap_or(String::from("kconfig"))
     }
 }
 

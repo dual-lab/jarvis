@@ -14,8 +14,8 @@ pub struct Runner {
 }
 
 impl Runner {
-    pub fn exec(self, config: KConfig) -> Result<()> {
-        command::build::Build::new(self.kernel_bin).build(config)?;
+    pub fn exec(self, _config: KConfig) -> Result<()> {
+        command::build::Build::new(self.kernel_bin).build(_config)?;
         Ok(())
     }
 }

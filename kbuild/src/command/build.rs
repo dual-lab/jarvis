@@ -20,7 +20,7 @@ impl Build {
         }
     }
     /// Build of iso pack flow
-    pub fn build(self, config: KConfig) -> Result<()> {
+    pub fn build(self, _config: KConfig) -> Result<()> {
         Ok(())
     }
 }
